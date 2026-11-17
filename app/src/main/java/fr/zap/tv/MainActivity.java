@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -35,6 +36,9 @@ public class MainActivity extends Activity {
         web.setBackgroundColor(Color.rgb(0x12, 0x10, 0x15));
         web.setFocusable(true);
         web.setFocusableInTouchMode(true);
+        // Rendu GPU et pré-rendu : défilement plus fluide sur TV
+        web.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+        if (Build.VERSION.SDK_INT >= 23) web.getSettings().setOffscreenPreRaster(true);
         setContentView(web);
 
         WebSettings s = web.getSettings();
@@ -84,12 +88,13 @@ public class MainActivity extends Activity {
                 Intent i = new Intent(MainActivity.this, PlayerActivity.class);
                 i.putExtra(PlayerActivity.EXTRA_DATA, json);
                 startActivityForResult(i, REQ_PLAY);
+                overridePendingTransition(0, 0); // ouverture instantanée du lecteur
             });
         }
 
         @JavascriptInterface
         public String version() {
-            return "1.0";
+            return "1.1";
         }
     }
 
