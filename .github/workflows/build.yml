@@ -37,7 +37,7 @@ jobs:
       - name: Publier une version téléchargeable
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v1.0.${{ github.run_number }}
-          name: Zap TV 1.0.${{ github.run_number }}
+          tag_name: v1.2.${{ github.run_number }}
+          name: Zap TV 1.2.${{ github.run_number }}
           files: zap-tv.apk
           make_latest: true

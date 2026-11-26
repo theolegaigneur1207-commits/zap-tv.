@@ -67,6 +67,19 @@ Appuyez sur le bouton **Playlists** en haut à droite, puis :
 
 Les identifiants restent sur la TV.
 
+## 5. Réglages, VPN et coups de cœur (version 1.2)
+
+Le bouton **Réglages**, en bas du menu de gauche, regroupe :
+
+- **VPN** : « Activer le VPN gratuit » crée tout seul un accès Cloudflare WARP (gratuit, sans limite de données) et ne fait passer que Zap TV dans le tunnel. La première fois, Android demande d'autoriser la connexion VPN : choisissez **OK**. Vous pouvez aussi utiliser votre propre fichier WireGuard (par exemple Proton VPN Free). Une fois activé, le VPN se rallume à chaque ouverture de l'app.
+- **Format des chaînes** : TS (recommandé) ou HLS. Si un format échoue, l'autre est essayé automatiquement.
+- **Mémoire tampon** : Démarrage rapide, Équilibré ou Anti-coupure.
+- **DNS sécurisé** : contourne les serveurs DNS du fournisseur d'accès.
+- **Animations** : complètes ou allégées (plus fluide sur les TV peu puissantes).
+- **Sources** et **Entretien** (actualiser le catalogue, vider le cache des images).
+
+Dans la fiche d'un film ou d'une série, le **cœur** l'ajoute à vos coups de cœur (rubrique **J'aime**). L'accueil propose ensuite « Recommandé pour vous » et « Parce que vous avez aimé… ».
+
 ## Personnaliser
 
 - **Nom de l'app** : `app/src/main/res/values/strings.xml`.
